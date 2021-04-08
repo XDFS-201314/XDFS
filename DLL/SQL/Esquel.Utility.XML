@@ -1,0 +1,1816 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Esquel.Utility</name>
+    </assembly>
+    <members>
+        <member name="T:Esquel.Utility.DapperHelper">
+            <summary>
+            MS SQL 数据库底层类
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.DapperHelper.SQLConnection(System.String)">
+            <summary>
+            SQL连接对象
+            </summary>
+            <param name="connstring"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.DapperHelper.OracleConnection(System.String)">
+            <summary>
+            Oracle连接对象
+            </summary>
+            <param name="connstring"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Esquel.Utility.OracleHelper">
+            <summary>
+            Oracle 数据库底层类
+            </summary>
+        </member>
+        <member name="P:Esquel.Utility.OracleHelper.CommandTimeOut">
+            <summary>
+            设置超时
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="connstring">数据库连接串</param>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Esquel.Utility.OracleHelper.OracleConnString">
+            <summary>
+            获取或设置oracle连接串
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ChangeDataBase(System.String)">
+            <summary>
+            改变数据库
+            </summary>
+            <param name="dataBaseName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.OracleConnOpen">
+            <summary>
+            打开连接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.OracleConnClose">
+            <summary>
+            关闭数据库连接
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.OracleTransBegin">
+            <summary>
+            事务管理 开始事务
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.OracleTransCommit">
+            <summary>
+            事务提交
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.OracleRollback">
+            <summary>
+            事务回滚
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteNonQuery(System.String,System.Data.CommandType,System.Boolean,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            执行指定类型的OleDb语句  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">语句</param>
+            <param name="cmdType">执行OleDb的类型</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteNonQueryProc(System.String,System.Boolean,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            执行存储过程  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteNonQueryProc(System.String,System.Boolean)">
+            <summary>
+            执行存储过程  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isTran">是否为事务</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteNonQueryProc(System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            执行存储过程  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteNonQueryProc(System.String)">
+            <summary>
+            执行存储过程  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteNonQuery(System.String,System.Boolean,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            执行OleDb语句  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteNonQuery(System.String,System.Boolean)">
+            <summary>
+            执行OleDb语句  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <param name="isTran">是否为事务</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteNonQuery(System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            执行OleDb语句  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteNonQuery(System.String)">
+            <summary>
+            执行OleDb语句  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteDataSet(System.String,System.Boolean,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            执行OleDb语句
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteDataSet(System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            执行OleDb语句
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteDataSet(System.String)">
+            <summary>
+            执行OleDb语句
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteDataSetProc(System.String,System.Boolean,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteDataSetProc(System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteDataSetProc(System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteDataTable(System.String,System.Boolean,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            执行OleDb语句
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteDataTable(System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            执行OleDb语句
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteDataTable(System.String)">
+            <summary>
+            执行OleDb语句
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteDataTableProc(System.String,System.Boolean,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteDataTableProc(System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteDataTableProc(System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteReader(System.String,System.Data.CommandType,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            执行OleDb语句
+            </summary>
+            <param name="cmdText">语句</param>
+            <param name="cmdType">语句类型</param>
+            <param name="commandParameters">参数集</param>
+            <returns>OleDb 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteReaderProc(System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="commandParameters">参数集</param>
+            <returns>OleDb 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteReaderProc(System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <returns>OleDb 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteReader(System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            执行OleDb 语句
+            </summary>
+            <param name="cmdText">OleDb 语句</param>
+            <param name="commandParameters">参数集</param>
+            <returns>OleDb 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteReader(System.String)">
+            <summary>
+            执行OleDb语句
+            </summary>
+            <param name="cmdText">语句</param>
+            <returns>OleDb 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteScalarProc(System.String,System.Boolean,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="IsTrans">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteScalarProc(System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="IsTrans">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteScalarProc(System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param> 
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteScalar(System.String,System.Boolean,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            执行OleDb语句
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <param name="IsTrans">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteScalar(System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            执行OleDb语句
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <param name="commandParameters">参数集</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ExecuteScalar(System.String)">
+            <summary>
+            执行OleDb语句
+            </summary>
+            <param name="cmdText">OleDb语句</param> 
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.PrepareCommand(System.Data.OracleClient.OracleCommand,System.Data.OracleClient.OracleConnection,System.Data.OracleClient.OracleTransaction,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            设置执行oracle语句参数
+            </summary>
+            <param name="cmd"></param>
+            <param name="conn"></param>
+            <param name="trans"></param>
+            <param name="cmdType"></param>
+            <param name="cmdText"></param>
+            <param name="cmdParms"></param>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.SelectReader``1(System.Type,System.String)">
+            <summary>
+            从Reader中获取数据并转换为List,不能与其他带事务的连接进行查询
+            </summary>
+            <typeparam name="T">List对象</typeparam>
+            <param name="objType">对象</param>
+            <param name="selCmd">SQL查询语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.OracleHelper.ChangeType(System.Object,System.Type)">
+            <summary>
+            将TYPE类型转换成OBJECT
+            </summary>
+            <param name="value"></param>
+            <param name="conversion"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Esquel.Utility.MySQLHelper">
+            <summary>
+            MS SQL 数据库底层类
+            </summary>
+        </member>
+        <member name="P:Esquel.Utility.MySQLHelper.CommandTimeOut">
+            <summary>
+            设置超时
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="connstring">数据库连接串</param>
+        </member>
+        <member name="P:Esquel.Utility.MySQLHelper.SQLConn">
+            <summary>
+            连接对象
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Esquel.Utility.MySQLHelper.SQLConnString">
+            <summary>
+            获取或设置SQL连接串
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ChangeDataBase(System.String)">
+            <summary>
+            改变数据库
+            </summary>
+            <param name="dataBaseName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.SqlConnOpen">
+            <summary>
+            打开连接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.SqlConnClose">
+            <summary>
+            关闭数据库连接
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.SQLTransBegin">
+            <summary>
+            事务管理 开始事务
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.SQLTransCommit">
+            <summary>
+            事务提交
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.SQLRollback">
+            <summary>
+            事务回滚
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteNonQuery(System.String,System.Data.CommandType,System.Boolean,System.Boolean,MySql.Data.MySqlClient.MySqlParameter[])">
+            <summary>
+            执行指定类型的SQL语句 (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">语句</param>
+            <param name="cmdType">执行SQL的类型</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteNonQueryProcClose(System.String,System.Boolean)">
+            <summary>
+            执行指定类型的SQL语句 (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">语句</param>
+            <param name="cmdType">执行SQL的类型</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteNonQueryProc(System.String,System.Boolean,System.Object)">
+            <summary>
+            执行存储过程  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteNonQueryProc(System.String,System.Boolean)">
+            <summary>
+            执行存储过程  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isTran">是否为事务</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteNonQueryProc(System.String,System.Object)">
+            <summary>
+            执行存储过程 (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteNonQueryProc(System.String)">
+            <summary>
+            执行存储过程 (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteNonQuery(System.String,System.Boolean,System.Object)">
+            <summary>
+            执行SQL语句 (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteNonQuery(System.String,System.Object)">
+            <summary>
+            执行SQL语句 (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteNonQuery(System.String)">
+            <summary>
+            执行SQL语句 (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteDataSetClose(System.String,System.Boolean)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="isClose">是否关闭</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteDataSetProcClose(System.String,System.Boolean)">
+            <summary>
+            执行存储过程语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="isClose">是否关闭</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteDataSet(System.String,System.Boolean,System.Object)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="isTran">是否为事务</param>
+            <param name="obj">数据对象</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteDataSet(System.String,System.Boolean)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="isTran">是否为事务</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteDataSet(System.String,System.Object)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="obj">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteDataSet(System.String)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteDataSetProc(System.String,System.Boolean,System.Object)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isTran">是否为事务</param>
+            <param name="obj">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteDataSetProc(System.String,System.Boolean)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isTran">是否为事务</param>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteDataSetProc(System.String,System.Object)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="obj">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteDataSetProc(System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteDataTable(System.String,System.Boolean,System.Object)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteDataTable(System.String,System.Boolean)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="isTran">是否为事务</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteDataTable(System.String,System.Object)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteDataTable(System.String)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteDataTableProc(System.String,System.Boolean,System.Object)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteDataTableProc(System.String,System.Boolean)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isTran">是否为事务</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteDataTableProc(System.String,System.Object)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteDataTableProc(System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteReader(System.String,System.Data.CommandType,System.Object)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">语句</param>
+            <param name="cmdType">语句类型</param>
+            <param name="commandParameters">参数集</param>
+            <returns>SQL 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteReaderProc(System.String,System.Object)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="commandParameters">参数集</param>
+            <returns>SQL 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteReaderProc(System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <returns>SQL 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteReader(System.String,System.Object)">
+            <summary>
+            执行SQL 语句
+            </summary>
+            <param name="cmdText">SQL 语句</param>
+            <param name="commandParameters">参数集</param>
+            <returns>SQL 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteReader(System.String)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">语句</param>
+            <returns>SQL 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.SelectReader``1(System.String)">
+            <summary>
+            从Reader中获取数据并转换为List,不能与其他带事务的连接进行查询
+            </summary>
+            <typeparam name="T">List对象</typeparam>
+            <param name="selCmd">SQL查询语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.SelectReader``1(System.Type,System.String)">
+            <summary>
+            从Reader中获取数据并转换为List,不能与其他带事务的连接进行查询
+            </summary>
+            <typeparam name="T">List对象</typeparam>
+            <param name="objType">对象</param>
+            <param name="selCmd">SQL查询语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteScalarClose(System.String,System.Boolean)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isClose">是否关闭连接对象</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteScalarProcClose(System.String,System.Boolean)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isClose">是否关闭连接对象</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteScalarProc(System.String,System.Boolean,System.Object)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="IsTrans">是否为事务</param>
+            <param name="obj">数据对象</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteScalarProc(System.String,System.Boolean)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="IsTrans">是否为事务</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteScalarProc(System.String,System.Object)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="IsTrans">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteScalarProc(System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param> 
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteScalar(System.String,System.Boolean,System.Object)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="IsTrans">是否为事务</param>
+            <param name="obj">数据对象</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteScalar(System.String,System.Boolean)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="IsTrans">是否为事务</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteScalar(System.String,System.Object)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="obj">数据对象</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ExecuteScalar(System.String)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param> 
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.PrepareCommand(MySql.Data.MySqlClient.MySqlCommand,MySql.Data.MySqlClient.MySqlConnection,MySql.Data.MySqlClient.MySqlTransaction,System.Data.CommandType,System.String,MySql.Data.MySqlClient.MySqlParameter[])">
+            <summary>
+            设置执行SQL语句参数
+            </summary>
+            <param name="cmd"></param>
+            <param name="conn"></param>
+            <param name="trans"></param>
+            <param name="cmdType"></param>
+            <param name="cmdText"></param>
+            <param name="cmdParms"></param>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.GetParameterData(System.String,System.Object)">
+            <summary>
+            数据对象拆分成SQL参数需要的值
+            </summary>
+            <param name="cmdText"></param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.MySQLHelper.ChangeType(System.Object,System.Type)">
+            <summary>
+            将TYPE类型转换成OBJECT
+            </summary>
+            <param name="value"></param>
+            <param name="conversion"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Esquel.Utility.SQLHelper">
+            <summary>
+            MS SQL 数据库底层类
+            </summary>
+        </member>
+        <member name="P:Esquel.Utility.SQLHelper.CommandTimeOut">
+            <summary>
+            设置超时
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="connstring">数据库连接串</param>
+        </member>
+        <member name="P:Esquel.Utility.SQLHelper.SQLConn">
+            <summary>
+            连接对象
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Esquel.Utility.SQLHelper.SQLConnString">
+            <summary>
+            获取或设置SQL连接串
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ChangeDataBase(System.String)">
+            <summary>
+            改变数据库
+            </summary>
+            <param name="dataBaseName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.SqlConnOpen">
+            <summary>
+            打开连接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.SqlConnClose">
+            <summary>
+            关闭数据库连接
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.SQLTransBegin">
+            <summary>
+            事务管理 开始事务
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.SQLTransCommit">
+            <summary>
+            事务提交
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.SQLRollback">
+            <summary>
+            事务回滚
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteNonQueryAsync(System.String,System.Object)">
+            <summary>
+            异步执行指定类型的SQL语句 (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">执行语句</param>
+            <param name="obj">对象</param>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.HandleCallback(System.IAsyncResult)">
+            <summary>  
+            异步回调方法  
+            </summary>  
+            <param name="result"></param>  
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteNonQuery(System.String,System.Data.CommandType,System.Boolean,System.Boolean,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行指定类型的SQL语句 (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">语句</param>
+            <param name="cmdType">执行SQL的类型</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns> 
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteNonQueryProcClose(System.String,System.Boolean)">
+            <summary>
+            执行指定类型的SQL语句 (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">语句</param>
+            <param name="cmdType">执行SQL的类型</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteNonQueryProc(System.String,System.Boolean,System.Object)">
+            <summary>
+            执行存储过程  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteNonQueryProc(System.String,System.Boolean)">
+            <summary>
+            执行存储过程  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isTran">是否为事务</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteNonQueryProc(System.String,System.Object)">
+            <summary>
+            执行存储过程 (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteNonQueryProc(System.String)">
+            <summary>
+            执行存储过程 (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteNonQuery(System.String,System.Boolean,System.Object)">
+            <summary>
+            执行SQL语句 (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteNonQuery(System.String,System.Object)">
+            <summary>
+            执行SQL语句 (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteNonQuery(System.String)">
+            <summary>
+            执行SQL语句 (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteDataSetClose(System.String,System.Boolean)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="isClose">是否关闭</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteDataSetProcClose(System.String,System.Boolean)">
+            <summary>
+            执行存储过程语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="isClose">是否关闭</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteDataSet(System.String,System.Boolean,System.Object)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="isTran">是否为事务</param>
+            <param name="obj">数据对象</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteDataSet(System.String,System.Boolean)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="isTran">是否为事务</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteDataSet(System.String,System.Object)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="obj">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteDataSet(System.String)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteDataSetProc(System.String,System.Boolean,System.Object)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isTran">是否为事务</param>
+            <param name="obj">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteDataSetProc(System.String,System.Boolean)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isTran">是否为事务</param>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteDataSetProc(System.String,System.Object)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="obj">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteDataSetProc(System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteDataTable(System.String,System.Boolean,System.Object)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteDataTable(System.String,System.Boolean)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="isTran">是否为事务</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteDataTable(System.String,System.Object)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteDataTable(System.String)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteDataTableProc(System.String,System.Boolean,System.Object)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteDataTableProc(System.String,System.Boolean)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isTran">是否为事务</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteDataTableProc(System.String,System.Object)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteDataTableProc(System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteReader(System.String,System.Data.CommandType,System.Object)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">语句</param>
+            <param name="cmdType">语句类型</param>
+            <param name="commandParameters">参数集</param>
+            <returns>SQL 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteReaderProc(System.String,System.Object)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="commandParameters">参数集</param>
+            <returns>SQL 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteReaderProc(System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <returns>SQL 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteReader(System.String,System.Object)">
+            <summary>
+            执行SQL 语句
+            </summary>
+            <param name="cmdText">SQL 语句</param>
+            <param name="commandParameters">参数集</param>
+            <returns>SQL 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteReader(System.String)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">语句</param>
+            <returns>SQL 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.SelectReader``1(System.String)">
+            <summary>
+            从Reader中获取数据并转换为List,不能与其他带事务的连接进行查询
+            </summary>
+            <typeparam name="T">List对象</typeparam>
+            <param name="selCmd">SQL查询语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.SelectReader``1(System.Type,System.String)">
+            <summary>
+            从Reader中获取数据并转换为List,不能与其他带事务的连接进行查询
+            </summary>
+            <typeparam name="T">List对象</typeparam>
+            <param name="objType">对象</param>
+            <param name="selCmd">SQL查询语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteScalarClose(System.String,System.Boolean)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isClose">是否关闭连接对象</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteScalarProcClose(System.String,System.Boolean)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isClose">是否关闭连接对象</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteScalarProc(System.String,System.Boolean,System.Object)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="IsTrans">是否为事务</param>
+            <param name="obj">数据对象</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteScalarProc(System.String,System.Boolean)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="IsTrans">是否为事务</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteScalarProc(System.String,System.Object)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="IsTrans">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteScalarProc(System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param> 
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteScalar(System.String,System.Boolean,System.Object)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="IsTrans">是否为事务</param>
+            <param name="obj">数据对象</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteScalar(System.String,System.Boolean)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="IsTrans">是否为事务</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteScalar(System.String,System.Object)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="obj">数据对象</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ExecuteScalar(System.String)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param> 
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.PrepareCommand(System.Data.SqlClient.SqlCommand,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            设置执行SQL语句参数
+            </summary>
+            <param name="cmd"></param>
+            <param name="conn"></param>
+            <param name="trans"></param>
+            <param name="cmdType"></param>
+            <param name="cmdText"></param>
+            <param name="cmdParms"></param>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.GetParameterData(System.String,System.Object)">
+            <summary>
+            数据对象拆分成SQL参数需要的值
+            </summary>
+            <param name="cmdText"></param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLHelper.ChangeType(System.Object,System.Type)">
+            <summary>
+            将TYPE类型转换成OBJECT
+            </summary>
+            <param name="value"></param>
+            <param name="conversion"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Esquel.Utility.AccessHelper">
+            <summary>
+            Access 数据库底层类
+            </summary>
+        </member>
+        <member name="P:Esquel.Utility.AccessHelper.CommandTimeOut">
+            <summary>
+            设置超时
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="connstring">数据库连接串</param>
+        </member>
+        <member name="P:Esquel.Utility.AccessHelper.OleDbConnString">
+            <summary>
+            获取或设置OleDb连接串
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ChangeDataBase(System.String)">
+            <summary>
+            改变数据库
+            </summary>
+            <param name="dataBaseName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.OleDbConnOpen">
+            <summary>
+            打开连接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.OleDbConnClose">
+            <summary>
+            关闭数据库连接
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.OleDbTransBegin">
+            <summary>
+            事务管理 开始事务
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.OleDbTransCommit">
+            <summary>
+            事务提交
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.OleDbRollback">
+            <summary>
+            事务回滚
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteNonQuery(System.String,System.Data.CommandType,System.Boolean,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行指定类型的OleDb语句  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">语句</param>
+            <param name="cmdType">执行OleDb的类型</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteNonQueryProc(System.String,System.Boolean,System.Data.OleDb.OleDbParameter[])">
+            <summary> 
+            执行存储过程  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteNonQueryProc(System.String,System.Boolean)">
+            <summary> 
+            执行存储过程  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isTran">是否为事务</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteNonQueryProc(System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行存储过程  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteNonQueryProc(System.String)">
+            <summary>
+            执行存储过程  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteNonQuery(System.String,System.Boolean,System.Data.OleDb.OleDbParameter[])">
+            <summary> 
+            执行OleDb语句  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteNonQuery(System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行OleDb语句  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteNonQuery(System.String)">
+            <summary>
+            执行OleDb语句  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteDataSet(System.String,System.Boolean,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行OleDb语句
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteDataSet(System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行OleDb语句
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteDataSet(System.String)">
+            <summary>
+            执行OleDb语句
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteDataSetProc(System.String,System.Boolean,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteDataSetProc(System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteDataSetProc(System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteDataTable(System.String,System.Boolean,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行OleDb语句
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteDataTable(System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行OleDb语句
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteDataTable(System.String)">
+            <summary>
+            执行OleDb语句
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteDataTableProc(System.String,System.Boolean,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteDataTableProc(System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteDataTableProc(System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteReader(System.String,System.Data.CommandType,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行OleDb语句
+            </summary>
+            <param name="cmdText">语句</param>
+            <param name="cmdType">语句类型</param>
+            <param name="commandParameters">参数集</param>
+            <returns>OleDb 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteReaderProc(System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="commandParameters">参数集</param>
+            <returns>OleDb 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteReaderProc(System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <returns>OleDb 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteReader(System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行OleDb 语句
+            </summary>
+            <param name="cmdText">OleDb 语句</param>
+            <param name="commandParameters">参数集</param>
+            <returns>OleDb 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteReader(System.String)">
+            <summary>
+            执行OleDb语句
+            </summary>
+            <param name="cmdText">语句</param>
+            <returns>OleDb 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteScalarProc(System.String,System.Boolean,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="IsTrans">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteScalarProc(System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="IsTrans">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteScalarProc(System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="cmdText">存储过程名</param> 
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteScalar(System.String,System.Boolean,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行OleDb语句
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <param name="IsTrans">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteScalar(System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行OleDb语句
+            </summary>
+            <param name="cmdText">OleDb语句</param>
+            <param name="commandParameters">参数集</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.ExecuteScalar(System.String)">
+            <summary>
+            执行OleDb语句
+            </summary>
+            <param name="cmdText">OleDb语句</param> 
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.AccessHelper.PrepareCommand(System.Data.OleDb.OleDbCommand,System.Data.OleDb.OleDbConnection,System.Data.OleDb.OleDbTransaction,System.Data.CommandType,System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            设置执行oracle语句参数
+            </summary>
+            <param name="cmd"></param>
+            <param name="conn"></param>
+            <param name="trans"></param>
+            <param name="cmdType"></param>
+            <param name="cmdText"></param>
+            <param name="cmdParms"></param>
+        </member>
+        <member name="T:Esquel.Utility.SQLiteHelper">
+            <summary>
+            Access 数据库底层类
+            </summary>
+        </member>
+        <member name="P:Esquel.Utility.SQLiteHelper.CommandTimeOut">
+            <summary>
+            设置超时
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="connstring">数据库连接串</param>
+        </member>
+        <member name="P:Esquel.Utility.SQLiteHelper.SQLiteConnString">
+            <summary>
+            获取或设置SQLite连接串
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.ChangeDataBase(System.String)">
+            <summary>
+            改变数据库
+            </summary>
+            <param name="dataBaseName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.SQLiteConnOpen">
+            <summary>
+            打开连接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.SQLiteConnClose">
+            <summary>
+            关闭数据库连接
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.SQLiteTransBegin">
+            <summary>
+            事务管理 开始事务
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.SQLiteTransCommit">
+            <summary>
+            事务提交
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.SQLiteRollback">
+            <summary>
+            事务回滚
+            </summary>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.ExecuteNonQuery(System.String,System.Data.CommandType,System.Boolean,System.Boolean,System.Data.SQLite.SQLiteParameter[])">
+            <summary>
+            执行指定类型的SQLite语句  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">语句</param>
+            <param name="cmdType">执行SQLite的类型</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.ExecuteNonQuery(System.String,System.Boolean,System.Data.SQLite.SQLiteParameter[])">
+            <summary> 
+            执行SQLite语句  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">SQLite语句</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.ExecuteNonQuery(System.String,System.Data.SQLite.SQLiteParameter[])">
+            <summary>
+            执行SQLite语句  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">SQLite语句</param>
+            <param name="commandParameters">参数集</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.ExecuteNonQuery(System.String)">
+            <summary>
+            执行SQLite语句  (新增，修改，删除 )
+            </summary>
+            <param name="cmdText">SQLite语句</param>
+            <returns>是否成功 1成功,0失败</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.ExecuteScalar(System.String,System.Boolean,System.Object)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="cmdText">SQL语句</param>
+            <param name="IsTrans">是否为事务</param>
+            <param name="obj">数据对象</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.ExecuteDataSet(System.String,System.Boolean,System.Data.SQLite.SQLiteParameter[])">
+            <summary>
+            执行SQLite语句
+            </summary>
+            <param name="cmdText">SQLite语句</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.ExecuteDataSet(System.String,System.Data.SQLite.SQLiteParameter[])">
+            <summary>
+            执行SQLite语句
+            </summary>
+            <param name="cmdText">SQLite语句</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.ExecuteDataSet(System.String)">
+            <summary>
+            执行SQLite语句
+            </summary>
+            <param name="cmdText">SQLite语句</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.ExecuteDataTable(System.String,System.Boolean,System.Data.SQLite.SQLiteParameter[])">
+            <summary>
+            执行SQLite语句
+            </summary>
+            <param name="cmdText">SQLite语句</param>
+            <param name="isTran">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.ExecuteDataTable(System.String,System.Data.SQLite.SQLiteParameter[])">
+            <summary>
+            执行SQLite语句
+            </summary>
+            <param name="cmdText">SQLite语句</param>
+            <param name="commandParameters">参数集</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.ExecuteDataTable(System.String)">
+            <summary>
+            执行SQLite语句
+            </summary>
+            <param name="cmdText">SQLite语句</param>
+            <returns>返回数据集</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.ExecuteReader(System.String,System.Data.CommandType,System.Data.SQLite.SQLiteParameter[])">
+            <summary>
+            执行SQLite语句
+            </summary>
+            <param name="cmdText">语句</param>
+            <param name="cmdType">语句类型</param>
+            <param name="commandParameters">参数集</param>
+            <returns>SQLite 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.ExecuteReader(System.String,System.Data.SQLite.SQLiteParameter[])">
+            <summary>
+            执行SQLite 语句
+            </summary>
+            <param name="cmdText">SQLite 语句</param>
+            <param name="commandParameters">参数集</param>
+            <returns>SQLite 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.ExecuteReader(System.String)">
+            <summary>
+            执行SQLite语句
+            </summary>
+            <param name="cmdText">语句</param>
+            <returns>SQLite 读指针</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.SelectReader``1(System.String)">
+            <summary>
+            从Reader中获取数据并转换为List,不能与其他带事务的连接进行查询
+            </summary>
+            <typeparam name="T">List对象</typeparam>
+            <param name="selCmd">SQL查询语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.SelectReader``1(System.Type,System.String)">
+            <summary>
+            从Reader中获取数据并转换为List,不能与其他带事务的连接进行查询
+            </summary>
+            <typeparam name="T">List对象</typeparam>
+            <param name="objType">对象</param>
+            <param name="selCmd">SQL查询语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.ChangeType(System.Object,System.Type)">
+            <summary>
+            将TYPE类型转换成OBJECT
+            </summary>
+            <param name="value"></param>
+            <param name="conversion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.ExecuteScalar(System.String,System.Boolean,System.Data.SQLite.SQLiteParameter[])">
+            <summary>
+            执行SQLite语句
+            </summary>
+            <param name="cmdText">SQLite语句</param>
+            <param name="IsTrans">是否为事务</param>
+            <param name="commandParameters">参数集</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.ExecuteScalar(System.String,System.Data.SQLite.SQLiteParameter[])">
+            <summary>
+            执行SQLite语句
+            </summary>
+            <param name="cmdText">SQLite语句</param>
+            <param name="commandParameters">参数集</param>
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.ExecuteScalar(System.String)">
+            <summary>
+            执行SQLite语句
+            </summary>
+            <param name="cmdText">SQLite语句</param> 
+            <returns>第一行第一列的值</returns>
+        </member>
+        <member name="M:Esquel.Utility.SQLiteHelper.PrepareCommand(System.Data.SQLite.SQLiteCommand,System.Data.SQLite.SQLiteConnection,System.Data.SQLite.SQLiteTransaction,System.Data.CommandType,System.String,System.Data.SQLite.SQLiteParameter[])">
+            <summary>
+            设置执行oracle语句参数
+            </summary>
+            <param name="cmd"></param>
+            <param name="conn"></param>
+            <param name="trans"></param>
+            <param name="cmdType"></param>
+            <param name="cmdText"></param>
+            <param name="cmdParms"></param>
+        </member>
+    </members>
+</doc>
